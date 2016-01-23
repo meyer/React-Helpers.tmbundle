@@ -7,12 +7,20 @@
 
 require 'shellwords'
 
-b = File.basename(ENV['TM_DROPPED_FILE'], '.js')
-var_name = b.gsub(/^\W+|\W+$/, '').split(/\W+/).map(&amp;:capitalize).join('').sub(/^[A-Z]/, &amp;:downcase)
+file_path = ENV['TM_DROPPED_FILE'].gsub(/\.js$/, '')
+var_name = File.basename(ENV['TM_DROPPED_FILE'])
+  # Remove file extension
+  .gsub(/\.\w{2,4}$/, '')
+  # Trim weird biz
+  .gsub(/^\W+|\W+$/, '')
+  # PascalCase
+  .split(/\W+/).map(&amp;:capitalize).join('')
+  # camelCase
+  .sub(/^[A-Z]/, &amp;:downcase)
 
 print "const ${1:#{var_name}} = require('"
-print './' unless b[1] == '.'
-print "#{b}');\n$0"
+print './' unless file_path[0] == '.'
+print "#{file_path}');\n$0"
 
 # via Infininight in IRC
 `#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
