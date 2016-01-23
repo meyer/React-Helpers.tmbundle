@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby20
+
+require 'shellwords'
+
+b = File.basename(ENV['TM_DROPPED_FILE'], '.js')
+var_name = b.gsub(/^\W+|\W+$/, '').split(/\W+/).map(&amp;:capitalize).join('').sub(/^[A-Z]/, &amp;:downcase)
+
+print "const ${1:#{var_name}} = require('"
+print './' unless b[1] == '.'
+print "#{b}');\n$0"
+
+# via Infininight in IRC
+`#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
+
+exit 0</string>
+	<key>draggedFileExtensions</key>
+	<array>
+		<string>js</string>
+		<string>json</string>
+		<string>css</string>
+		<string>svg</string>
+		<string>png</string>
+		<string>gif</string>
+		<string>jpg</string>
+	</array>
+	<key>name</key>
+	<string>import: relative path</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>F1BAD834-2CE9-4485-B993-61D62D6FABE7</string>
+</dict>
+</plist>

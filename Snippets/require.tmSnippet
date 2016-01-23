@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>const ${1:React} = require('${2:${1/./\L$0/}}');</string>
+	<key>name</key>
+	<string>require</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>req</string>
+	<key>uuid</key>
+	<string>4EC5AFA7-61F1-437C-9EED-2375F2791756</string>
+</dict>
+</plist>

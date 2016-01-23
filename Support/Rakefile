@@ -1,0 +1,22 @@
+require './utils.rb'
+
+namespace :test do
+  desc 'Test parse_snippet_comments'
+  task :parse_snippet_comments do
+    puts <<-JS.parse_snippet_comments
+React.createClass({
+// ${1:
+  getDefaultProps: () => ({/* $2 */}),
+
+// }
+// ${3:
+  getInitialState: () => ({/* $4 */}),
+
+// }
+  render: function() {/* $0 */},
+
+  $wow: `true`,
+});
+    JS
+  end
+end
