@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>${1:prop}: React.PropTypes.${2|array,bool,func,number,object,string,element,node,any|}${3:.isRequired},$4</string>
+	<key>name</key>
+	<string>PropTypes</string>
+	<key>scope</key>
+	<string>source.js.jsx</string>
+	<key>tabTrigger</key>
+	<string>prop</string>
+	<key>uuid</key>
+	<string>42E74421-7F90-45BF-9EB0-0A466D4C7D48</string>
+</dict>
+</plist>
