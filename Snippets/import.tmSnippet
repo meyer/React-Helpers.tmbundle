@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>import ${1:React} from '${2:${1/./\L$0/}}';</string>
+	<key>name</key>
+	<string>import</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>imp</string>
+	<key>uuid</key>
+	<string>73327A65-31CE-49F3-A372-0EBCE4571977</string>
+</dict>
+</plist>
