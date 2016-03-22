@@ -7,16 +7,11 @@
 
 require 'shellwords'
 
-file_path = ENV['TM_DROPPED_FILE'].gsub(/\.js$/, '')
-var_name = File.basename(ENV['TM_DROPPED_FILE'])
-  .gsub(/\.\w{2,4}$/, '') # Remove file extension
-  .gsub(/^\W+|\W+$/, '') # Trim weird biz
-  .split(/\W+/).map(&amp;:capitalize).join('') # PascalCase
-  .sub(/^[A-Z]/, &amp;:downcase) # camelCase
+file_path = ENV['TM_DROPPED_FILE'] #.gsub(/\.js$/, '')
 
-print "const ${1:#{var_name}} = require('"
 print './' unless file_path[0] == '.'
-print "#{file_path}');$0"
+print file_path
+print '$0'
 
 # via Infininight in IRC
 `#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
@@ -26,19 +21,18 @@ exit 0</string>
 	<array>
 		<string>js</string>
 		<string>json</string>
-		<string>css</string>
-		<string>svg</string>
+		<string>xml</string>
 		<string>png</string>
-		<string>gif</string>
 		<string>jpg</string>
+		<string>gif</string>
 	</array>
 	<key>name</key>
-	<string>require: relative path</string>
+	<string>unquoted relative file name</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
-	<string>source.js</string>
+	<string>source.json, text.xml</string>
 	<key>uuid</key>
-	<string>F1BAD834-2CE9-4485-B993-61D62D6FABE7</string>
+	<string>CFB2852C-A984-4A52-926B-F31DEB66A6F7</string>
 </dict>
 </plist>

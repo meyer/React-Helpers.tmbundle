@@ -14,9 +14,9 @@ var_name = File.basename(ENV['TM_DROPPED_FILE'])
   .split(/\W+/).map(&amp;:capitalize).join('') # PascalCase
   .sub(/^[A-Z]/, &amp;:downcase) # camelCase
 
-print "const ${1:#{var_name}} = require('"
+print "import ${1:#{var_name}} from '"
 print './' unless file_path[0] == '.'
-print "#{file_path}');$0"
+print "#{file_path}';$0"
 
 # via Infininight in IRC
 `#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
@@ -33,12 +33,12 @@ exit 0</string>
 		<string>jpg</string>
 	</array>
 	<key>name</key>
-	<string>require: relative path</string>
+	<string>import: relative path</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
 	<key>scope</key>
 	<string>source.js</string>
 	<key>uuid</key>
-	<string>F1BAD834-2CE9-4485-B993-61D62D6FABE7</string>
+	<string>DD3955BA-23CD-4AE3-A071-1524BF4A2129</string>
 </dict>
 </plist>
