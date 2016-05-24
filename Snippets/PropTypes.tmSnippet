@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>${1:prop}: React.PropTypes.${2|array,bool,func,number,object,string,element,node,any|}${3:.isRequired},$4</string>
+	<string>React.PropTypes.${1|array,bool,func,number,object,string,element,node,any|}${2:.isRequired}$3</string>
 	<key>name</key>
 	<string>PropTypes</string>
 	<key>scope</key>
