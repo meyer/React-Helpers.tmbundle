@@ -7,16 +7,18 @@
 
 require 'shellwords'
 
-file_path = ENV['TM_DROPPED_FILE'].gsub(/\.js$/, '')
-var_name = File.basename(ENV['TM_DROPPED_FILE'])
+relative_file_path = ENV['TM_DROPPED_FILE'].gsub(/\/index\.js/, '').gsub(/\.js$/, '')
+absolute_file_path = ENV['TM_DROPPED_FILEPATH'].gsub(/\/index\.js/, '').gsub(/\.js$/, '')
+
+var_name = File
+  .basename(absolute_file_path)
   .gsub(/\.\w{2,4}$/, '') # Remove file extension
   .gsub(/^\W+|\W+$/, '') # Trim weird biz
-  .split(/\W+/).map(&amp;:capitalize).join('') # PascalCase
-  .sub(/^[A-Z]/, &amp;:downcase) # camelCase
+  .split(/[-_]/).inject {|total, b| total + b[0].upcase + b[1..-1]}
 
 print "const ${1:#{var_name}} = require('"
-print './' unless file_path[0] == '.'
-print "#{file_path}');$0"
+print './' unless relative_file_path[0] == '.'
+print "#{relative_file_path}');\n$0"
 
 # via Infininight in IRC
 `#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
