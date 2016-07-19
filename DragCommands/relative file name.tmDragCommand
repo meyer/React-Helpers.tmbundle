@@ -14,7 +14,7 @@ print file_path
 print '$0'
 
 # via Infininight in IRC
-`#{ENV['TM_MATE'].shellescape} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
+`#{ENV['TM_MATE'].shellescape} -l #{ENV['TM_SELECTION']} -u #{ENV['TM_DOCUMENT_UUID'].shellescape}`
 
 exit 0</string>
 	<key>draggedFileExtensions</key>

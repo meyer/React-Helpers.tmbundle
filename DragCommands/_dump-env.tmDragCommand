@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby20
+require 'json'
+puts "#{JSON.pretty_generate ENV.to_h}"
+</string>
+	<key>draggedFileExtensions</key>
+	<array>
+		<string>js</string>
+	</array>
+	<key>isDisabled</key>
+	<true/>
+	<key>name</key>
+	<string> Dump ENV</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.js</string>
+	<key>uuid</key>
+	<string>B091E1B2-8441-4E9C-A7D7-FBF2AE7A26C8</string>
+</dict>
+</plist>
